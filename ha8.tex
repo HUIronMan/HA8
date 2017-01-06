@@ -8,6 +8,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{color}
 %\newcommand{\genasso}[2]{\begin{minipage}{0.7\textwidth}\begin{normalsize}\begin{flushleft}\textbf{{#1}}\end{flushleft}\end{normalsize}\vspace{-1cm}\begin{flushleft}\begin{small}{#2}\end{small}\end{flushleft}\end{minipage}\\\vspace{0.2cm}}
 \pagenumbering{arabic}
 
@@ -74,13 +75,35 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Aufgabe 1}
 \subsection*{a)}
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|l||l|l|l|l|l|l|}
+\hline
+\# & C & E & F & D & B & A \\ \hline \hline
+1 & \textcolor{red}{C} & \textcolor{blue}{E} & \textcolor{blue}{F} & \textcolor{blue}{D} &  &  \\ \hline
+2 & C & \textcolor{red}{E} & \textcolor{blue}{F} & \textcolor{blue}{D} & \textcolor{blue}{B} &  \\ \hline
+3 & C & E & \textcolor{red}{F} & \textcolor{blue}{D} & \textcolor{blue}{B} &  \\ \hline
+4 & C & E & F & \textcolor{red}{D} & \textcolor{blue}{B} & \textcolor{blue}{A} \\ \hline
+5 & C & E & F & D & \textcolor{red}{B} & \textcolor{blue}{A} \\ \hline
+6 & C & E & F & D & B & \textcolor{red}{A} \\ \hline
+\end{tabular}
+\caption{\textcolor{red}{Integrierte Komponente}, \textcolor{blue}{Platzhalter}}
+\label{my-label}
+\end{table}
 
 \subsection*{b)}
+Es werden hier und in den meisten Fällen $N-1$ Platzhalter und keine Treiber benötigt, da bei der Top-Down-Strategie höher leigende Komponenten zuerst abgearbeitet werden. Gibt es mehr als eine Top-Level-Komponente, kann es Abweichungen von diesen Regeln geben. Also in diesem Fall 6 Platzhalter und keine Treiber.
 
 \subsection*{c)}
+Alle Komponenten eienr Ebene können theoretisch in beliebiger Reihenfolge integriert werden woraus sich verschiedene Varianten ergeben. in diesem Beispiel E, F und D. Eine optimale Variante bindet D als letztes ein um die Anzahl der zu verwendenden Platzhalter zu einem Zeitpunkt so gering wie möglich zu halten. Also in diesem den Paltzhalter von A so simpel wie möglich zu gestalten udn so spät wie möglich zu verwenden.
 
 
 \newpage\section*{Aufgabe 2}
+
+Bei der Top-Bottom-Strategie wird der Aufbau des Programms früh sichtbar und die Steuerfunktionalität früh geprüft. Dies geht zu Last der Prüfung der Integration mit dem System und der Hardware. Es werden viele Platzhalter verwendet bei mit der Zeit steigendem Aufwand.
+Bei der Bottom-Up-Strategie singt der Aufwand mit der Zeit und anstelle von Platzhaltern werden viele Treiber benötigt. Integration mit System und Hardware werden früh geprüft, aber heir zu Lastend er Steuerfunktionalität und der Vorzeigbarkeit.
+Die Outside-In-Integration verbindet beide vorgehensweisen. der Zeitaufwand ist relativ constant und es werden die Vorteile aus Top-Bottom- und Bottum-Up-Integration genutzt. Jedoch werden nun Treiber und Platzhalter benötigt.
+Als default Strategie sollte die Outside-In-Integration verwendet werden, welche im Schnitt die meisten Vorteile mit sich bringt. Es sollte dennoch von Fall zu Fall entschiedne werden ob nicht eine der anderen Strategien erfolgreicher ist. Werden z.B. viele Informationen nach unten transportiert ist es vermutlich einfacher mit einer Top-Bottom-Strategie zu Arbeiten, da die Implementierung der Dummies hier weniger Aufwand macht als die der Treiber. Werden auf der anderen Seite viele Informationen nach oben weiter gegeben tritt der umgekerte Fall ein und eine Bottom-Up-Strategie ist effektiver.
 
 
 \end{document}
