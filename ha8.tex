@@ -92,10 +92,10 @@
 \end{table}
 
 \subsection*{b)}
-Es werden hier und in den meisten Fällen $N-1$ Platzhalter und keine Treiber benötigt, da bei der Top-Down-Strategie höher liegende Komponenten zuerst abgearbeitet werden. Gibt es mehr als eine Top-Level-Komponente, kann es Abweichungen von diesen Regeln geben. Also in diesem Fall 6 Platzhalter und keine Treiber.
+Es werden hier und in den meisten Fällen $N-1$ Platzhalter und ein Treiber benötigt, da bei der Top-Down-Strategie höher liegende Komponenten zuerst abgearbeitet werden. Gibt es mehr als eine Top-Level-Komponente oder loops, kann es Abweichungen von diesen Regeln geben. Also in diesem Fall 6 Platzhalter und ein Treiber, wobei die Platzhalter 11 mal Verwendung finden.
 
 \subsection*{c)}
-Alle Komponenten einer Ebene können theoretisch in beliebiger Reihenfolge integriert werden woraus sich verschiedene Varianten ergeben. in diesem Beispiel E, F und D. Eine optimale Variante bindet D als letztes ein um die Anzahl der zu verwendenden Platzhalter zu einem Zeitpunkt so gering wie möglich zu halten. Also in diesem den Paltzhalter von A so simpel wie möglich zu gestalten und so spät wie möglich zu verwenden.
+Alle Komponenten können in beliebiger Reihenfolge integriert werden vorrausgesetzt, dass mindestens eine Komponente die Oberhalb liegt bereits getestet wurde, woraus sich verschiedene Varianten ergeben. Im Beispiel hier können z.B. E, F und D beliebig in der Reihenfolge vertauscht werden. Eine optimale Variante bindet D als letztes ein um die Anzahl der zu verwendenden Platzhalter zu jedem Zeitpunkt so gering wie möglich zu halten. Also in diesem Fall den Paltzhalter von A so spät wie möglich zu verwenden.
 
 
 \newpage\section*{Aufgabe 2}
@@ -103,7 +103,7 @@ Alle Komponenten einer Ebene können theoretisch in beliebiger Reihenfolge integ
 Bei der Top-Down-Strategie wird der Aufbau des Programms früh sichtbar und die Steuerfunktionalität früh geprüft. Dies geht zu Last der Prüfung der Integration mit dem System und der Hardware. Es werden viele Platzhalter verwendet bei mit der Zeit steigendem Aufwand.
 Bei der Bottom-Up-Strategie singt der Aufwand mit der Zeit und anstelle von Platzhaltern werden viele Treiber benötigt. Integration mit System und Hardware werden früh geprüft, aber heir zu Lastend er Steuerfunktionalität und der Vorzeigbarkeit.
 Die Outside-In-Integration verbindet beide vorgehensweisen. der Zeitaufwand ist relativ constant und es werden die Vorteile aus Top-Down- und Bottom-Up-Integration genutzt. Jedoch werden nun Treiber und Platzhalter benötigt.
-Als default Strategie sollte die Outside-In-Integration verwendet werden, welche im Schnitt die meisten Vorteile mit sich bringt. Es sollte dennoch von Fall zu Fall entschieden werden ob nicht eine der anderen Strategien erfolgreicher ist. Werden z.B. viele Informationen nach unten transportiert ist es vermutlich einfacher mit einer Top-Bottom-Strategie zu Arbeiten, da die Implementierung der Dummies hier weniger Aufwand macht als die der Treiber. Werden auf der anderen Seite viele Informationen nach oben weiter gegeben tritt der umgekehrte Fall ein und eine Bottom-Up-Strategie ist effektiver.
+Als default Strategie sollte die Outside-In-Integration verwendet werden, welche im Schnitt die meisten Vorteile mit sich bringt. Es sollte dennoch von Fall zu Fall entschieden werden ob nicht eine der anderen Strategien erfolgreicher ist. Werden z.B. viele Informationen nach unten transportiert ist es vermutlich einfacher mit einer Top-Bottom-Strategie zu Arbeiten, da die Implementierung der Dummies hier weniger Aufwand macht als die der Treiber. Werden auf der anderen Seite viele Informationen nach oben weiter gegeben tritt der umgekehrte Fall ein und eine Bottom-Up-Strategie ist effektiver. Bei einem Gleichstand kann im Allgemeinen angenommen werden, dass Treiber eifnacher zu Implementieren sind als Platzhalter.
 
 
 \end{document}
